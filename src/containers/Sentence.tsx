@@ -20,9 +20,13 @@ const Sentence = () => {
     dispatch(start())
   }, [dispatch])
 
-  if (!isWizardOn) {
+  if (!sentence && !isWizardOn) {
     return (
-      <div onClick={startWizard} className="App-link">
+      <div
+        onClick={startWizard}
+        style={{ cursor: 'pointer' }}
+        className="App-link"
+      >
         Start buliding your sentence
       </div>
     )
@@ -30,7 +34,11 @@ const Sentence = () => {
 
   return (
     <div>
-      <div onClick={startWizard} className="App-link">
+      <div
+        onClick={startWizard}
+        style={{ cursor: 'pointer' }}
+        className="App-link"
+      >
         Start again
       </div>
       <div>{sentence}</div>

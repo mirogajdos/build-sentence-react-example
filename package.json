@@ -5,7 +5,6 @@
   "author": {
     "name": "Miroslav Gajdos"
   },
-  "homepage": "https://github.com/extrememito/build-sentence-react-example",
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@types/jest": "24.0.18",

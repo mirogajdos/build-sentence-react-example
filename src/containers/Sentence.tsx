@@ -1,6 +1,8 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { State } from '../store'
+import { reset } from '../store/sentence.actions'
+import { start } from '../store/wizard.actions'
 
 const Sentence = () => {
   const sentence = useSelector<State, string>(state => {
@@ -9,13 +11,28 @@ const Sentence = () => {
     return sentence.trim()
   })
 
-  if (!sentence) {
-    return <div className="App-link">Start buliding your sentence</div>
+  const isWizardOn = useSelector<State, boolean>(state => state.wizard.show)
+
+  const dispatch = useDispatch()
+
+  const startWizard = useCallback(() => {
+    dispatch(reset())
+    dispatch(start())
+  }, [dispatch])
+
+  if (!isWizardOn) {
+    return (
+      <div onClick={startWizard} className="App-link">
+        Start buliding your sentence
+      </div>
+    )
   }
 
   return (
     <div>
-      <div className="App-link">Start again</div>
+      <div onClick={startWizard} className="App-link">
+        Start again
+      </div>
       <div>{sentence}</div>
     </div>
   )

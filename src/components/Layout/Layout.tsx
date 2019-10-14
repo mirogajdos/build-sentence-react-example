@@ -10,7 +10,7 @@ const Layout: React.FC = props => {
         <p>Build your sentence with React-Redux</p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/extrememito/build-sentence-react-example"
           target="_blank"
           rel="noopener noreferrer"
         >

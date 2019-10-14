@@ -2,6 +2,10 @@
   "name": "sentence-generator",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Miroslav Gajdos"
+  },
+  "homepage": "https://github.com/extrememito/build-sentence-react-example",
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@types/jest": "24.0.18",
